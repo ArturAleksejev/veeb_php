@@ -1,7 +1,7 @@
 <?php
 $eesnimi = 'Artur';
 $perenimi = "Aleksejev";
-$täisnimi = $eesnimi.' '.$perenimi;
+$taisnimi = $eesnimi.' '.$perenimi;
 $vanus = 19;
 $kaal = 65;
 $sugu = 'ei tea';
@@ -18,7 +18,7 @@ switch ($sugu) {
         break;
 }
 //var_dump($eesnimi); // muutuja sisu test vaatamine
-echo 'Mina olen '.$täisnimi.'!<br>';
+echo 'Mina olen '.$taisnimi.'!<br>';
 echo 'Minu vanus: '.$vanus.'<br>';
 echo 'Minu kaal: '.$kaal.'<br>';
 ?>
