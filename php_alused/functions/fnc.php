@@ -40,23 +40,22 @@ function tabeliPais(){
 }
 function tabeliRida($arv){
     $rida = '<tr>';
-    $rida = $rida.'<td>'.$arv.'</td>';
-    $rida .= '<td class="paaris">';
+            '<td>'.$arv.'</td>';
+            '<td class="paaris">';
     if(kasPaaris($arv)){
         $rida .=  '<i class="fas fa-angle-down"></i>';
     }
     $rida .=  '</td>';
-    $rida .=  '<td class="paaritu">';
+              '<td class="paaritu">';
     if(!kasPaaris($arv)){
         $rida .=  '<i class="fas fa-angle-down"></i>';
     }
     $rida .=  '</td>';
-    $rida .=  '<td class="algarv">';
+              '<td class="algarv">';
     if(kasAlgarv($arv)){
         $rida .=  '<i class="fas fa-angle-down"></i>';
     }
-    $rida .=  '</td>';
-    $rida .=  '</tr>';
+    $rida .=  '</td>'.'<tr>';
     return $rida;
 }
 function tabel($ridadeArv){

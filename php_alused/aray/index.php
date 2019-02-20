@@ -1,25 +1,36 @@
 <?php
-    $peppaPig = array(
+$porsad = array(
+    array(
         'Peppa',
         'naine',
         4,
         1.04
-    );
+    ),
+    array(
+        'George',
+        'mees',
+        2,
+        1.05
+    )
+);
 
 
-echo $peppaPig[0].'<br>';
-echo $peppaPig[1].'<br>';
-echo $peppaPig[2].'<br>';
-echo $peppaPig[3].'<br>';
+echo $porsad[0][0].'<br>';
+echo $porsad[0][1].'<br>';
+echo $porsad[0][2].'<br>';
+echo $porsad[0][3].'<br>';
 
 echo '<hr>';
 
-for ($i = 0; $i < count($peppaPig); $i++) {
-    echo $peppaPig[$i].'<br>';
+for ($i = 0; $i < count($porsad); $i++) {
+    echo $porsad[$i].'<br>';
 }
 
 echo '<hr>';
 
-foreach ($peppaPig as $element) {
-    echo $element.'<br>';
+foreach ($porsad as $porsas) {
+    foreach ($porsas as $element) {
+        echo $element.'<br>';
+    }
+    echo '<hr>';
 }
