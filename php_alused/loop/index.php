@@ -1,6 +1,4 @@
-<?php
-header('Refresh: 2');
-?>
+
     <style>
         div {
             margin: auto;
