@@ -9,4 +9,6 @@ function paarsuseKontroll ($arv) {
 }
 
 // kutsume funktsiooni tööle
-paarsuseKontroll (7);
+for($arv = 0; $arv <= 10; $arv++) {
+    paarsuseKontroll($arv);
+}
