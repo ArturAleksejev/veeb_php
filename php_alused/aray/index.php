@@ -55,14 +55,24 @@ function tabel($andmed){
 function vordleHinda($raamat1, $raamat2){
     if($raamat1['hind'] == $raamat2['hind']){
         return 0;
-    } else if($raamat1['hind'] < $raamat2['hind']){
+    } else if($raamat1['hind'] > $raamat2['hind']){
         return -1;
     } else {
         return 1;
     }
 }
 
+function filtreeriHinnaJargi($andmed, $algHind, $loppHind){
+    $filreerimiseTulemus = array();
+    foreach ($andmed as $element){
+        if($element['hind'] >= $algHind and $element['hind'] <= $loppHind){
+            $filreerimiseTulemus[] = $element;
+        }
+    }
+    return $filreerimiseTulemus;
+}
+
 usort($raamatud, 'vordleHinda');
 
-tabel($raamatud);
+tabel(filtreeriHinnaJargi($raamatud, 0, 100));
 
