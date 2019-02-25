@@ -1,15 +1,8 @@
 <?php
-echo '<pre>';
-print_r($_GET);
-echo '</pre>';
-echo '<hr>';
+//$nimi = $_GET['nimi'];
+//$parool = $_GET['parool'];
+extract($_GET);
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-echo '<hr>';
-
-echo '<pre>';
-print_r($_REQUEST);
-echo '</pre>';
+echo 'Tere '.$nimi.'!<br>';
+echo 'Sinu parool on'.$parool;
 echo '<hr>';
