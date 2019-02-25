@@ -1,48 +1,56 @@
 <?php
-function build_table($array){
-    // start table
-    $html = '<table>';
-    // header row
-    $html .= '<tr>';
-    foreach($array[0] as $key=>$value){
-        $html .= '<th>' . htmlspecialchars($key) . '</th>';
-    }
-    $html .= '</tr>';
-
-    // data rows
-    foreach( $array as $key=>$value){
-        $html .= '<tr>';
-        foreach($value as $key2=>$value2){
-            $html .= '<td>' . htmlspecialchars($value2) . '</td>';
-        }
-        $html .= '</tr>';
-    }
-
-    // finish table and return it
-
-    $html .= '</table>';
-    return $html;
-}
-
 $raamatud = array(
     array(
-        'nimi'=>'Enesehinnangu tööraamat teismelistele',
-        'autor'=>'Lisa M. Schab',
-        'keel'=>'eesti',
-        'hind'=>2,
-        'lehekulgi'=>192),
+        'nimi' => 'Enesehinnangu tööraamat teismelistele',
+        'autor' => 'Lisa M. Schab',
+        'keel' => 'eesti',
+        'lk' => 192,
+        'hind' => 15.75
+    ),
     array(
-        'nimi'=>'Põrsas Peppa. Esimesed numbrid',
-        'autor'=>'eOne',
-        'keel'=>'eesti',
-        'hind'=>4,
-        'lehekulgi'=>10),
+        'nimi' => 'Põrsas Peppa. Esimesed numbrid',
+        'autor' => 'eOne',
+        'keel' => 'eesti',
+        'lk' => 10,
+        'hind' => 5.85
+    ),
     array(
-        'nimi'=>'Jänku-Jass mängib peitust',
-        'autor'=>'Julia Sigarova',
-        'keel'=>'eesti',
-        'hind'=>6,
-        'lehekulgi'=>12)
+        'nimi' => 'Jänku-Jass mängib peitust',
+        'autor' => 'Julia Sigarova',
+        'keel' => 'eesti',
+        'lk' => 12,
+        'hind' => 10.15
+    )
 );
-echo build_table($raamatud);
-?>
+
+function tabeliPais($andmed){
+    echo '<thead>';
+    echo '<tr>';
+    foreach ($andmed as $element){
+        echo '<th>'.$element.'</th>';
+    }
+    echo '</tr>';
+    echo '</thead>';
+}
+
+function tabeliRida($andmed){
+    echo '<tr>';
+    foreach ($andmed as $elemendiNimetus => $elemendiVaartus){
+        echo '<td>'.$elemendiVaartus.'</td>';
+    }
+    echo '</tr>';
+}
+
+function tabel($andmed){
+    echo '<table border="5">';
+    tabeliPais(array_keys($andmed[0]));
+    echo '<tbody>';
+    foreach ($andmed as $element){
+        tabeliRida($element);
+    }
+    echo '</tbody>';
+    echo '</table>';
+}
+
+tabel($raamatud);
+
