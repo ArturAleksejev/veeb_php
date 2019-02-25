@@ -25,9 +25,24 @@ function build_table($array){
 }
 
 $raamatud = array(
-    array('Nimi'=>'Enesehinnangu tööraamat teismelistele', 'Autor'=>'Lisa M. Schab', 'Keel'=>'eesti', 'Lehekulgi'=>192),
-    array('Nimi'=>'Põrsas Peppa. Esimesed numbrid', 'Autor'=>'eOne', 'Keel'=>'eesti', 'Lehekulgi'=>10),
-    array('Nimi'=>'Jänku-Jass mängib peitust', 'Autor'=>'Julia Sigarova', 'Keel'=>'eesti', 'Lehekulgi'=>12)
+    array(
+        'nimi'=>'Enesehinnangu tööraamat teismelistele',
+        'autor'=>'Lisa M. Schab',
+        'keel'=>'eesti',
+        'hind'=>2,
+        'lehekulgi'=>192),
+    array(
+        'nimi'=>'Põrsas Peppa. Esimesed numbrid',
+        'autor'=>'eOne',
+        'keel'=>'eesti',
+        'hind'=>4,
+        'lehekulgi'=>10),
+    array(
+        'nimi'=>'Jänku-Jass mängib peitust',
+        'autor'=>'Julia Sigarova',
+        'keel'=>'eesti',
+        'hind'=>6,
+        'lehekulgi'=>12)
 );
 echo build_table($raamatud);
 ?>
