@@ -5,34 +5,48 @@ function failiKontroll($failiNimi){
     }
     return false;
 }
+
 function loeFailist($failiNimi){
+    $raamatud = array();
+    $nimetused = array(
+        'nimetus',
+        'autor',
+        'keel',
+        'lk',
+        'hind'
+    );
     if(failiKontroll($failiNimi)){
         $fp = fopen($failiNimi, 'r');
+        $raamat = array();
         while(!feof($fp)){
             $rida = fgets($fp);
-            if(trim($rida) == ''){
-                echo '=======================<br>';
+            if(trim($rida) != ''){
+                $raamat[] = $rida;
             } else {
-                echo $rida . '<br>';
+                $raamat = array_combine($nimetused, $raamat);
+                $raamatud[] = $raamat;
+                $raamat = array();
             }
         }
     }
+    return $raamatud;
 }
 
-function tabelFailist($failiNimi) {
-    if(failiKontroll($failiNimi)){
+function tabelFailist($failiNimi){
+    if(failiKontroll($failiNimi)) {
         $fp = fopen($failiNimi, 'r');
-        echo '<table border="5">';
-            echo '<tr>';
-                while(!feof($fp)) {
-                    $rida = fgets($fp);
-                    if(trim($rida) != ''){
-                        echo '<td>'.$rida.'<td>';
-                    } else {
-                        echo '</tr>';
-                    }
-                }
-    }           echo '</table>';
+        echo '<table border="1">';
+        echo '<tr>';
+        while (!feof($fp)) {
+            $rida = fgets($fp);
+            if(trim($rida) != ''){
+                echo '<td>'.$rida.'</td>';
+            } else {
+                echo '</tr>';
+            }
+        }
+        echo '</table>';
+    }
 }
-loeFailist('raamatud.txt');
+
 tabelFailist('raamatud.txt');
