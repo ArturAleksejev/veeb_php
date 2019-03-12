@@ -24,14 +24,14 @@ $siteRoles = array(
     ROLE_USER => 'Kasutaja'
 );
 define('DEFAULT_CONTROLLER', 'default');
+// import support functions
+require_once(LIB_DIR.'utils.php');
 // import model classes
 require_once(MODEL_DIR.'Template.php');
 require_once(MODEL_DIR.'Http.php');
 require_once(MODEL_DIR.'Mysql.php');
 require_once(MODEL_DIR.'Linkobject.php');
 require_once(MODEL_DIR.'Session.php');
-// import support functions
-require_once(LIB_DIR.'utils.php');
 // import database configuration
 require_once(BASE_DIR.'db_conf.php');
 // set up language settings
@@ -52,10 +52,4 @@ if(!isset($siteLangs[$lang_id]))
     $lang_id = DEFAULT_LANG;
     $http->set('lang_id', $lang_id);
 }
-define('LANG_ID', $lang_id);<?php
-/**
- * Created by PhpStorm.
- * User: artur.aleksejev
- * Date: 12.03.2019
- * Time: 9:06
- */
+define('LANG_ID', $lang_id);
